@@ -1,1168 +1,538 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Madhur Gupta — Full Stack & DevOps Engineer | Cloud & AI Systems</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfolio of Madhur Gupta, Full Stack & DevOps Engineer. Specialized in React.js, Python (Django/Flask/FastAPI), PostgreSQL, Docker, GCP, AWS, and RAG/Multi-Agent AI systems.">
-  <meta name="keywords" content="Madhur Gupta, Full Stack Engineer, DevOps Engineer, React, Python, Django, Flask, FastAPI, Docker, Kubernetes, GCP, AWS, PostgreSQL, RAG Pipelines, LangChain, Jaipur, India">
+  <title>Madhur Gupta — Full Stack & DevOps Engineer</title>
+  <meta name="description" content="Madhur Gupta — Full Stack & DevOps Engineer specializing in Python, React.js, Docker, PostgreSQL, GCP, AWS, and AI/RAG systems.">
   <meta name="author" content="Madhur Gupta">
-  
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Madhur Gupta — Full Stack & DevOps Engineer">
-  <meta property="og:description" content="Engineering Cloud-Native Platforms, Distributed CMS Architectures & Intelligent AI Systems.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/project-webpress.jpg">
-  
-  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury Serif) + Plus Jakarta Sans + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Favicon / SVG Monogram -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23D4AF37'>✦</text></svg>">
-  
-  <!-- Main Stylesheet -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-obsidian text-platinum antialiased selection:bg-gold-muted selection:text-gold-light">
-  
-  <!-- Ambient Spotlight / Cursor Aura -->
-  <div id="ambient-spotlight" class="ambient-glow" aria-hidden="true"></div>
+<body>
 
-  <!-- Audio Toggle & Quick Status Floating Pill -->
-  <div class="fixed-corner-controls" aria-label="Audio controls">
-    <button id="sound-toggle-btn" class="control-pill" title="Toggle audio experience" aria-label="Toggle subtle UI sounds">
-      <span class="sound-icon" id="sound-icon">🔇</span>
-      <span class="control-label" id="sound-label">Audio Off</span>
-    </button>
-  </div>
-
-  <!-- Navigation Bar -->
-  <header id="main-header" class="site-header">
-    <div class="header-container">
-      <a href="#hero" class="brand-monogram" aria-label="Madhur Gupta Home">
-        <span class="monogram-symbol">MG</span>
-        <span class="brand-divider">/</span>
-        <span class="brand-sub">Full Stack &amp; DevOps</span>
-      </a>
-
-      <!-- Desktop Navigation Links -->
-      <nav class="desktop-nav" aria-label="Primary Navigation">
-        <a href="#about" class="nav-link"><span>01.</span> Profile</a>
-        <a href="#projects" class="nav-link"><span>02.</span> Projects</a>
-        <a href="#architecture" class="nav-link"><span>03.</span> Architecture</a>
-        <a href="#skills" class="nav-link"><span>04.</span> Skills</a>
-        <a href="#experience" class="nav-link"><span>05.</span> Experience</a>
-        <a href="#certifications" class="nav-link"><span>06.</span> Certifications</a>
-        <a href="#contact" class="nav-link"><span>07.</span> Contact</a>
-      </nav>
-
-      <!-- Action & Availability -->
-      <div class="header-actions">
-        <div class="availability-badge" title="Actively reviewing engineering opportunities">
-          <span class="pulse-indicator"></span>
-          <span class="availability-text">Open to Roles</span>
-        </div>
-        <a href="#contact" class="btn btn-luxury-outline header-cta">
-          <span>Get in Touch</span>
-          <svg class="cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M7 17L17 7M17 7H7M17 7V17"/>
-          </svg>
-        </a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Madhur Gupta</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
       </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <!-- Mobile Menu -->
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <!-- Mobile Drawer Navigation -->
-    <div id="mobile-menu-drawer" class="mobile-drawer" aria-hidden="true">
-      <nav class="mobile-nav" aria-label="Mobile Navigation">
-        <a href="#about" class="mobile-nav-link"><span>01</span> Profile &amp; Summary</a>
-        <a href="#projects" class="mobile-nav-link"><span>02</span> Production Projects</a>
-        <a href="#architecture" class="mobile-nav-link"><span>03</span> DevOps &amp; Architecture</a>
-        <a href="#skills" class="mobile-nav-link"><span>04</span> Technical Skills</a>
-        <a href="#experience" class="mobile-nav-link"><span>05</span> Experience &amp; Education</a>
-        <a href="#certifications" class="mobile-nav-link"><span>06</span> Verified Certifications</a>
-        <a href="#contact" class="mobile-nav-link"><span>07</span> Contact &amp; Resume</a>
-      </nav>
-      <div class="mobile-drawer-footer">
-        <div class="mobile-time-display">
-          <span class="time-label">LOCAL IST:</span>
-          <span id="mobile-utc-clock">00:00:00 IST</span>
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="hero-tag">Full Stack &amp; DevOps Engineer</span>
+          <h1>Madhur Gupta</h1>
+          <p class="hero-sub">
+            Building production-grade cloud-native platforms, multi-tenant systems, and intelligent AI pipelines. Specializing in Python, React.js, Docker, and GCP.
+          </p>
+          <div class="hero-meta">
+            <span>📍 Jaipur, Rajasthan, India</span>
+            <span>🎓 B.Tech CS &amp; Tech — ICFAI University (2022–2026)</span>
+            <span>💼 Open to Opportunities</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+            <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Production Apps</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Dockerized</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">5x</span>
+            <span class="stat-label">Certifications</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">50+</span>
+            <span class="stat-label">Languages Supported</span>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero-section">
-      <!-- Background Constellation Canvas -->
-      <canvas id="hero-canvas" class="hero-particles" aria-hidden="true"></canvas>
+  <div class="divider"></div>
 
-      <div class="section-container hero-layout">
-        <!-- Top Editorial Telemetry Bar -->
-        <div class="hero-meta-bar">
-          <div class="meta-tag">
-            <span class="meta-dot"></span>
-            <span class="meta-title">FULL STACK &amp; DEVOPS ENGINEER</span>
-          </div>
-          <div class="meta-tag live-clock-tag">
-            <span class="clock-label">LOCATION:</span>
-            <span>Jaipur, Rajasthan, India</span>
-          </div>
-          <div class="meta-tag">
-            <span class="meta-title">PYTHON SME · GCP · DOCKER · RAG PIPELINES</span>
-          </div>
-        </div>
-
-        <!-- Hero Headline & Core Intro -->
-        <div class="hero-content">
-          <p class="hero-eyebrow">MADHUR GUPTA — B.TECH CS &amp; TECHNOLOGY</p>
-          <h1 class="hero-heading">
-            Engineering <span class="gold-gradient-text italic-serif">Cloud-Native</span> Platforms &amp; Intelligent Systems.
-          </h1>
-          <p class="hero-description">
-            Full Stack &amp; DevOps Engineer with hands-on experience shipping 5+ production-deployed applications spanning cybersecurity, e-commerce, event management, and multi-tenant CMS architectures. Proficient in React.js, Python (Django/Flask/FastAPI), Docker, PostgreSQL, GCP, AWS, and RAG AI pipelines.
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a Full Stack &amp; DevOps Engineer with hands-on experience shipping 5+ production-deployed applications across cybersecurity, event management, e-commerce, and multi-tenant CMS platforms.
           </p>
-
-          <!-- Hero Action Buttons -->
-          <div class="hero-cta-group">
-            <a href="#projects" class="btn btn-luxury-primary">
-              <span>Explore Deployed Projects</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a href="#architecture" class="btn btn-luxury-ghost">
-              <span>View System Architecture</span>
-              <span class="blueprint-icon">⚡</span>
-            </a>
-            <a href="mailto:madhurguptaofficial@gmail.com" class="btn btn-luxury-icon" title="Copy Direct Email" id="quick-copy-email-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              <span class="copy-tooltip" id="copy-tooltip">Copy Email</span>
-            </a>
-          </div>
-
-          <!-- Quick Metrics Bar -->
-          <div class="hero-metrics-strip">
-            <div class="metric-card">
-              <span class="metric-value">5+</span>
-              <span class="metric-label">Production Apps Shipped</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric-card">
-              <span class="metric-value">100%</span>
-              <span class="metric-label">Dockerized Cloud Deployments</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric-card">
-              <span class="metric-value">50+</span>
-              <span class="metric-label">Languages (CodeSnippets)</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric-card">
-              <span class="metric-value">5x</span>
-              <span class="metric-label">Cloud &amp; AI Certifications</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Identity Emblem Card -->
-        <div class="hero-visual-card">
-          <div class="portrait-frame tilt-card identity-emblem-frame">
-            <div class="portrait-border-glow"></div>
-            
-            <div class="executive-badge-container">
-              <div class="monogram-crest">
-                <div class="crest-ring ring-outer"></div>
-                <div class="crest-ring ring-inner"></div>
-                <div class="crest-core">
-                  <span class="crest-initials">MG</span>
-                </div>
-              </div>
-              <div class="emblem-meta">
-                <span class="emblem-name">MADHUR GUPTA</span>
-                <span class="emblem-subtitle">Full Stack &amp; DevOps Engineer</span>
-                <div class="emblem-tags">
-                  <span class="badge">Python SME</span>
-                  <span class="badge">Docker &amp; K8s</span>
-                  <span class="badge">React.js</span>
-                  <span class="badge">GCP / AWS</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="portrait-caption">
-              <div class="caption-details">
-                <span class="caption-title">The ICFAI University Jaipur</span>
-                <span class="caption-subtitle">B.Tech Computer Science &amp; Tech (2022-2026)</span>
-              </div>
-              <div class="status-indicator-pill">
-                <span class="dot-beacon"></span>
-                <span>Active</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <a href="#about" class="scroll-cue" aria-label="Scroll to Profile section">
-        <span class="cue-text">DISCOVER</span>
-        <div class="cue-line"></div>
-      </a>
-    </section>
-
-    <!-- SECTION 01: PROFESSIONAL SUMMARY & PHILOSOPHY -->
-    <section id="about" class="section-padding content-section">
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-number">01 // PROFILE</div>
-          <h2 class="section-title">Bridging Full-Stack Engineering, <br><span class="gold-gradient-text italic-serif">Cloud DevOps &amp; AI Intelligence</span></h2>
-        </div>
-
-        <div class="about-grid">
-          <!-- Text Columns -->
-          <div class="about-bio-column">
-            <p class="lead-text">
-              Fresh B.Tech Computer Science Graduate and Full Stack &amp; DevOps Engineer with hands-on experience shipping 5+ production-deployed applications spanning cybersecurity, event management, e-commerce, and multi-tenant CMS platforms.
-            </p>
-            <p class="body-text">
-              Served as Python SME at Octopyder Services, spearheading technical decisions and containerizing complex cybersecurity platforms with Docker and secure PostgreSQL RBAC schemas. Deeply committed to writing modular, testable code paired with automated cloud infrastructure (GCP/AWS, Terraform, Kubernetes, Prometheus/Grafana) and modern RAG AI pipelines.
-            </p>
-            <div class="signature-block">
-              <div class="signature-symbol">Madhur Gupta</div>
-              <span class="signature-role">Full Stack &amp; DevOps Engineer · Jaipur, Rajasthan, India</span>
-            </div>
-
-            <!-- Download CV / GitHub Links -->
-            <div class="about-actions">
-              <a href="mailto:madhurguptaofficial@gmail.com?subject=Inquiry%20from%20Portfolio" class="btn btn-luxury-outline">
-                <span>Request Full Resume</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-                </svg>
-              </a>
-              <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="link-luxury">
-                <span>GitHub @imadhurgupta</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-                </svg>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="link-luxury">
-                <span>LinkedIn Profile</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Core Pillars Cards -->
-          <div class="about-pillars-column">
-            <div class="pillar-card tilt-card">
-              <div class="pillar-header">
-                <span class="pillar-index">I.</span>
-                <span class="pillar-badge">Cloud-Native &amp; DevOps</span>
-              </div>
-              <h3 class="pillar-title">Containerized Reliability</h3>
-              <p class="pillar-desc">
-                Dockerizing microservices, orchestrating Kubernetes pods, automating CI/CD via GitHub Actions, and configuring Prometheus/Grafana monitoring for real-time observability.
-              </p>
-            </div>
-
-            <div class="pillar-card tilt-card">
-              <div class="pillar-header">
-                <span class="pillar-index">II.</span>
-                <span class="pillar-badge">Architecture</span>
-              </div>
-              <h3 class="pillar-title">Multi-Tenant Systems &amp; RBAC</h3>
-              <p class="pillar-desc">
-                Architecting multi-tenant CMS backends with isolated database schemas, custom domains, and role-based access control (RBAC) ensuring enterprise-grade multi-tier security.
-              </p>
-            </div>
-
-            <div class="pillar-card tilt-card">
-              <div class="pillar-header">
-                <span class="pillar-index">III.</span>
-                <span class="pillar-badge">Next-Gen AI</span>
-              </div>
-              <h3 class="pillar-title">RAG Pipelines &amp; Multi-Agent Systems</h3>
-              <p class="pillar-desc">
-                Building intelligent retrieval-augmented generation (RAG) pipelines and multi-agent workflows using LangChain, vector storage, and certified GenAI foundations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: SELECTED WORKS / PROJECTS -->
-    <section id="projects" class="section-padding content-section bg-obsidian-subtle">
-      <div class="section-container">
-        <div class="section-header-row">
-          <div>
-            <div class="section-number">02 // PORTFOLIO</div>
-            <h2 class="section-title">Production <span class="gold-gradient-text italic-serif">Masterworks</span></h2>
-          </div>
-          
-          <!-- Category Filter Bar -->
-          <div class="project-filters" role="tablist" aria-label="Project Categories">
-            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Works</button>
-            <button class="filter-btn" data-filter="cms" role="tab" aria-selected="false">CMS &amp; Web Builders</button>
-            <button class="filter-btn" data-filter="devtools" role="tab" aria-selected="false">Developer Tools</button>
-            <button class="filter-btn" data-filter="cloud-sec" role="tab" aria-selected="false">Cloud &amp; Security</button>
-          </div>
-        </div>
-
-        <!-- Projects Grid -->
-        <div class="projects-grid">
-
-          <!-- PROJECT 1: WEBPRESS -->
-          <article class="project-card tilt-card" data-category="cms" id="project-card-webpress">
-            <div class="project-media-wrapper">
-              <img src="assets/project-webpress.jpg" alt="WebPress Multi-Tenant CMS & Website Builder" class="project-media-img" loading="lazy">
-              <div class="project-overlay">
-                <button class="view-project-btn" data-project-id="webpress" aria-label="Inspect WebPress Project Details">
-                  <span>Inspect Blueprint &amp; Specs</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="project-badge-tag">MULTI-TENANT CMS</div>
-            </div>
-            <div class="project-body">
-              <div class="project-meta-row">
-                <span class="project-year">Mar 2026 – Apr 2026</span>
-                <span class="project-dot">·</span>
-                <span class="project-scale">Multi-Tenant Architecture</span>
-              </div>
-              <h3 class="project-heading">WebPress — Multi-Tenant Website Builder &amp; Modular CMS</h3>
-              <p class="project-abstract">
-                A scalable multi-tenant Content Management System and drag-and-drop website builder allowing users to manage multiple isolated websites from a centralized dashboard with custom domains, dynamic themes, and a custom event-driven hook/filter plugin engine.
-              </p>
-              <div class="project-tech-pills">
-                <span class="tech-pill">Python-Django</span>
-                <span class="tech-pill">PostgreSQL</span>
-                <span class="tech-pill">JavaScript</span>
-                <span class="tech-pill">Docker</span>
-                <span class="tech-pill">OAuth</span>
-                <span class="tech-pill">Plugin Engine</span>
-              </div>
-              <div class="project-footer-actions">
-                <button class="text-cta-btn open-modal-btn" data-project-id="webpress">
-                  <span>Deep Dive &amp; Architecture</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                <div class="project-links">
-                  <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 2: CODESNIPPETS -->
-          <article class="project-card tilt-card" data-category="devtools" id="project-card-codesnippets">
-            <div class="project-media-wrapper">
-              <img src="assets/project-codesnippets.jpg" alt="CodeSnippets Developer Workspace Terminal Midnight" class="project-media-img" loading="lazy">
-              <div class="project-overlay">
-                <button class="view-project-btn" data-project-id="codesnippets" aria-label="Inspect CodeSnippets Details">
-                  <span>Inspect Blueprint &amp; Specs</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="project-badge-tag">DEV WORKSPACE</div>
-            </div>
-            <div class="project-body">
-              <div class="project-meta-row">
-                <span class="project-year">Nov 2025</span>
-                <span class="project-dot">·</span>
-                <span class="project-scale">50+ Languages Supported</span>
-              </div>
-              <h3 class="project-heading">CodeSnippets — "Terminal Midnight" Developer Workspace</h3>
-              <p class="project-abstract">
-                A premium, high-performance developer workspace to securely store, organize, and execute snippets. Features a glassmorphic UI with fluid animations, syntax highlighting for 50+ languages, instant search, and real-time cross-device sync via Firebase.
-              </p>
-              <div class="project-tech-pills">
-                <span class="tech-pill">React.js</span>
-                <span class="tech-pill">Node.js</span>
-                <span class="tech-pill">Tailwind CSS</span>
-                <span class="tech-pill">Firebase Firestore</span>
-                <span class="tech-pill">Framer Motion</span>
-                <span class="tech-pill">Lucide React</span>
-              </div>
-              <div class="project-footer-actions">
-                <button class="text-cta-btn open-modal-btn" data-project-id="codesnippets">
-                  <span>Deep Dive &amp; Architecture</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                <div class="project-links">
-                  <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 3: EVENTARK -->
-          <article class="project-card tilt-card" data-category="cloud-sec" id="project-card-eventark">
-            <div class="project-media-wrapper">
-              <img src="assets/project-eventark.jpg" alt="Eventark Event Management & QR Ticketing Platform" class="project-media-img" loading="lazy">
-              <div class="project-overlay">
-                <button class="view-project-btn" data-project-id="eventark" aria-label="Inspect Eventark Details">
-                  <span>Inspect Blueprint &amp; Specs</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="project-badge-tag">EVENT PLATFORM</div>
-            </div>
-            <div class="project-body">
-              <div class="project-meta-row">
-                <span class="project-year">Dec 2025</span>
-                <span class="project-dot">·</span>
-                <span class="project-scale">Automated QR Ticketing</span>
-              </div>
-              <h3 class="project-heading">Eventark — Event Discovery, Ticketing &amp; RSVP Platform</h3>
-              <p class="project-abstract">
-                A premium event discovery and ticketing platform featuring distinct role-based access control for Attendees, Organizers, and Managers. Implements automated QR-code ticket generation, Google OAuth on GCP, and streamlined dynamic event carousels.
-              </p>
-              <div class="project-tech-pills">
-                <span class="tech-pill">Python-Flask</span>
-                <span class="tech-pill">PostgreSQL</span>
-                <span class="tech-pill">GCP</span>
-                <span class="tech-pill">Google OAuth</span>
-                <span class="tech-pill">QR Engine</span>
-                <span class="tech-pill">HTML/CSS</span>
-              </div>
-              <div class="project-footer-actions">
-                <button class="text-cta-btn open-modal-btn" data-project-id="eventark">
-                  <span>Deep Dive &amp; Architecture</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                <div class="project-links">
-                  <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub Source">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 4: CLOUD CHERRYTREE -->
-          <article class="project-card tilt-card" data-category="cloud-sec" id="project-card-cherrytree">
-            <div class="project-media-wrapper">
-              <img src="assets/project-cherrytree.jpg" alt="Cloud CherryTree Cybersecurity Platform" class="project-media-img" loading="lazy">
-              <div class="project-overlay">
-                <button class="view-project-btn" data-project-id="cherrytree" aria-label="Inspect Cloud CherryTree Details">
-                  <span>Inspect Blueprint &amp; Specs</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                  </svg>
-                </button>
-              </div>
-              <div class="project-badge-tag">CYBERSECURITY PLATFORM</div>
-            </div>
-            <div class="project-body">
-              <div class="project-meta-row">
-                <span class="project-year">Jan 2026 – Jun 2026</span>
-                <span class="project-dot">·</span>
-                <span class="project-scale">Octopyder Services (Python SME)</span>
-              </div>
-              <h3 class="project-heading">Cloud CherryTree — Enterprise Cybersecurity &amp; RBAC Engine</h3>
-              <p class="project-abstract">
-                Architected the Cloud CherryTree cybersecurity platform with fine-grained role-based access control (RBAC), secure relational PostgreSQL schemas, and containerized Docker architecture for cloud-native deployment.
-              </p>
-              <div class="project-tech-pills">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">PostgreSQL</span>
-                <span class="tech-pill">Docker</span>
-                <span class="tech-pill">RBAC</span>
-                <span class="tech-pill">REST APIs</span>
-                <span class="tech-pill">Cloud-Native</span>
-              </div>
-              <div class="project-footer-actions">
-                <button class="text-cta-btn open-modal-btn" data-project-id="cherrytree">
-                  <span>Deep Dive &amp; Architecture</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </button>
-                <div class="project-links">
-                  <a href="#contact" class="icon-link" title="Inquire Details">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 03: INTERACTIVE DEVOPS & SYSTEM ARCHITECTURE BLUEPRINT -->
-    <section id="architecture" class="section-padding content-section">
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-number">03 // DEVOPS &amp; ARCHITECTURE</div>
-          <h2 class="section-title">Production Full-Stack &amp; <br><span class="gold-gradient-text italic-serif">Cloud Architecture Workbench</span></h2>
-          <p class="section-subtitle">
-            An interactive blueprint of my production-deployed software architectures. Click any layer below to inspect containerization pipelines, security safeguards, and database sharding topologies.
+          <p>
+            At Octopyder Services, I served as the team's <strong>Python Subject Matter Expert (SME)</strong>, spearheading the architecture of the Cloud CherryTree cybersecurity platform — designing RBAC schemas, PostgreSQL data models, and Docker containerization workflows.
           </p>
-        </div>
-
-        <!-- Architecture Interactive Console -->
-        <div class="arch-workbench">
-          <!-- Flow Nodes (Left/Top) -->
-          <div class="arch-pipeline-nav" role="tablist" aria-label="System Architecture Layers">
-            <button class="arch-node-btn active" data-node="ingress" role="tab" aria-selected="true">
-              <span class="node-order">01</span>
-              <div class="node-meta">
-                <span class="node-name">Cloud Ingress &amp; OAuth 2.0</span>
-                <span class="node-tech">GCP Load Balancing · Google OAuth · Cloud Armor</span>
-              </div>
-              <span class="node-latency">Edge Secured</span>
-            </button>
-
-            <button class="arch-node-btn" data-node="multitenant" role="tab" aria-selected="false">
-              <span class="node-order">02</span>
-              <div class="node-meta">
-                <span class="node-name">Multi-Tenant CMS Engine</span>
-                <span class="node-tech">Django / Flask Services · Custom Domain Router</span>
-              </div>
-              <span class="node-latency">Isolated Core</span>
-            </button>
-
-            <button class="arch-node-btn" data-node="containers" role="tab" aria-selected="false">
-              <span class="node-order">03</span>
-              <div class="node-meta">
-                <span class="node-name">Container Mesh &amp; CI/CD</span>
-                <span class="node-tech">Docker Multi-Stage · Kubernetes · GitHub Actions</span>
-              </div>
-              <span class="node-latency">Cloud Native</span>
-            </button>
-
-            <button class="arch-node-btn" data-node="database" role="tab" aria-selected="false">
-              <span class="node-order">04</span>
-              <div class="node-meta">
-                <span class="node-name">Database Schemas &amp; RBAC</span>
-                <span class="node-tech">PostgreSQL Relational Schemas · MySQL · MongoDB</span>
-              </div>
-              <span class="node-latency">RBAC Hardened</span>
-            </button>
-
-            <button class="arch-node-btn" data-node="ai_rag" role="tab" aria-selected="false">
-              <span class="node-order">05</span>
-              <div class="node-meta">
-                <span class="node-name">RAG &amp; Multi-Agent AI</span>
-                <span class="node-tech">LangChain · Vector Embeddings · Multi-Agent Agents</span>
-              </div>
-              <span class="node-latency">Context-Aware</span>
-            </button>
-          </div>
-
-          <!-- Architecture Detail Panel (Right) -->
-          <div class="arch-inspector-panel">
-            <div class="inspector-header">
-              <div class="inspector-badge" id="arch-badge">LAYER 01: CLOUD INGRESS &amp; OAUTH 2.0</div>
-              <div class="inspector-status">
-                <span class="pulse-indicator"></span>
-                <span id="arch-status-text">OPERATIONAL · OAUTH 2.0 ENFORCED</span>
-              </div>
-            </div>
-
-            <div class="inspector-body">
-              <h3 class="inspector-title" id="arch-title">Google Cloud Load Balancing &amp; OAuth Authentication</h3>
-              <p class="inspector-desc" id="arch-desc">
-                Standardized security boundary with Google Cloud Platform integration. Enforces Google OAuth 2.0 token validation, role separation across attendees, organizers, and managers, and HTTPS certificate provisioning.
-              </p>
-
-              <!-- Telemetry Metrics Grid -->
-              <div class="inspector-metrics-grid">
-                <div class="telemetry-box">
-                  <span class="telemetry-label">SECURITY PROTOCOL</span>
-                  <span class="telemetry-value" id="arch-metric-lat">OAuth 2.0 + JWT</span>
-                </div>
-                <div class="telemetry-box">
-                  <span class="telemetry-label">DEPLOYMENT RUNTIME</span>
-                  <span class="telemetry-value" id="arch-metric-conn">GCP &amp; AWS Clouds</span>
-                </div>
-                <div class="telemetry-box">
-                  <span class="telemetry-label">ROLE SEGREGATION</span>
-                  <span class="telemetry-value" id="arch-metric-iso">3-Tier RBAC</span>
-                </div>
-                <div class="telemetry-box">
-                  <span class="telemetry-label">CONTAINER STATUS</span>
-                  <span class="telemetry-value" id="arch-metric-sec">Docker Multi-Stage</span>
-                </div>
-              </div>
-
-              <!-- Technical Deep Dive Notes -->
-              <div class="inspector-deepdive">
-                <span class="deepdive-heading">ARCHITECTURAL SAFEGUARDS</span>
-                <ul class="safeguard-list" id="arch-safeguards">
-                  <li>Automated token signature verification preventing session hijacking and replay attacks</li>
-                  <li>Role-based access matrix separating administrative routes from public-facing endpoints</li>
-                  <li>Cross-Site Request Forgery (CSRF) and CORS protection integrated into Flask/Django middleware</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="inspector-footer">
-              <span class="blueprint-code-tag">TOPOLOGY SPEC // MADHUR GUPTA FULL-STACK</span>
-              <a href="#contact" class="btn btn-luxury-ghost-sm">
-                <span>Discuss System Design</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 04: CAPABILITIES & TECHNICAL SKILLS MATRIX -->
-    <section id="skills" class="section-padding content-section bg-obsidian-subtle">
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-number">04 // PROFICIENCY</div>
-          <h2 class="section-title">The Engineering <br><span class="gold-gradient-text italic-serif">Capabilities Matrix</span></h2>
-          <p class="section-subtitle">
-            Hands-on technical competencies proven through shipping 5+ production platforms, leading as Python SME, and building multi-tenant cloud architectures.
+          <p>
+            I am deeply committed to writing clean, modular, testable code paired with automated cloud infrastructure (GCP/AWS, Kubernetes, Terraform) and practical AI/RAG pipelines (LangChain, vector stores, multi-agent systems).
           </p>
-        </div>
-
-        <div class="skills-matrix-grid">
-          <!-- Backend & Languages -->
-          <div class="skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">🐍</span>
-              <h3 class="skill-cat-title">Languages &amp; Backend</h3>
-            </div>
-            <ul class="skill-item-list">
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">Python (Flask, Django, FastAPI, SME)</span>
-                  <span class="skill-level">96%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 96%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">JavaScript &amp; Node.js (REST APIs, Microservices)</span>
-                  <span class="skill-level">92%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 92%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">RESTful API Design &amp; WebSockets</span>
-                  <span class="skill-level">94%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 94%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">Event-Driven Hook/Filter Plugin Architecture</span>
-                  <span class="skill-level">90%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 90%;"></div></div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Frontend & UI -->
-          <div class="skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">⚛️</span>
-              <h3 class="skill-cat-title">Frontend &amp; UI Engineering</h3>
-            </div>
-            <ul class="skill-item-list">
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">React.js (Hooks, Component Architecture)</span>
-                  <span class="skill-level">93%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 93%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">Tailwind CSS &amp; Modern Vanilla CSS</span>
-                  <span class="skill-level">95%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 95%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">Framer Motion &amp; Glassmorphic UI</span>
-                  <span class="skill-level">90%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 90%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">HTML5 Semantic Structure &amp; Responsive UX</span>
-                  <span class="skill-level">98%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 98%;"></div></div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Cloud & DevOps -->
-          <div class="skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">☁️</span>
-              <h3 class="skill-cat-title">Cloud, DevOps &amp; SRE</h3>
-            </div>
-            <ul class="skill-item-list">
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">Docker (Multi-stage builds, Containerization)</span>
-                  <span class="skill-level">95%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 95%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">Google Cloud Platform (GCP) &amp; AWS</span>
-                  <span class="skill-level">90%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 90%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">Kubernetes &amp; Terraform (IaC)</span>
-                  <span class="skill-level">84%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 84%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">GitHub Actions CI/CD &amp; Prometheus/Grafana</span>
-                  <span class="skill-level">88%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 88%;"></div></div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Data & AI Systems -->
-          <div class="skill-category-card tilt-card">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">🤖</span>
-              <h3 class="skill-cat-title">Data, AI &amp; Security</h3>
-            </div>
-            <ul class="skill-item-list">
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">PostgreSQL (Relational Schemas, RBAC)</span>
-                  <span class="skill-level">95%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 95%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">MySQL &amp; MongoDB Databases</span>
-                  <span class="skill-level">90%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 90%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">LangChain, RAG Pipelines &amp; Multi-Agent Systems</span>
-                  <span class="skill-level">86%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 86%;"></div></div>
-              </li>
-              <li class="skill-item">
-                <div class="skill-item-info">
-                  <span class="skill-name">OAuth 2.0, Complex RBAC &amp; Git/GitLab</span>
-                  <span class="skill-level">94%</span>
-                </div>
-                <div class="skill-progress-bar"><div class="skill-fill" style="width: 94%;"></div></div>
-              </li>
-            </ul>
+          <div class="contact-links">
+            <a href="mailto:madhurguptaofficial@gmail.com">madhurguptaofficial@gmail.com</a>
+            <span class="sep">·</span>
+            <a href="tel:+918114426702">+91 8114426702</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer">github.com/imadhurgupta</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION 05: PROFESSIONAL EXPERIENCE & EDUCATION -->
-    <section id="experience" class="section-padding content-section">
-      <div class="section-container">
-        <div class="section-header">
-          <div class="section-number">05 // CAREER &amp; EDUCATION</div>
-          <h2 class="section-title">Experience &amp; <br><span class="gold-gradient-text italic-serif">Academic Foundation</span></h2>
-        </div>
-
-        <div class="timeline-wrapper">
-          <!-- Experience Item: Octopyder Services -->
-          <div class="timeline-row">
-            <div class="timeline-meta">
-              <span class="timeline-period">JAN 2026 — JUN 2026</span>
-              <span class="timeline-company">Octopyder Services Pvt. Ltd.</span>
-              <span class="timeline-location">Jaipur, Rajasthan, India | On-Site</span>
-            </div>
-            <div class="timeline-dot-wrapper">
-              <div class="timeline-dot"></div>
-              <div class="timeline-line"></div>
-            </div>
-            <div class="timeline-content tilt-card">
-              <h3 class="role-title">Full Stack Developer Intern (Python SME)</h3>
-              <p class="role-desc">
-                Served as the engineering team's Python Subject Matter Expert (SME), guiding technical decisions and facilitating knowledge-sharing sessions. Architected the Cloud CherryTree cybersecurity platform featuring complex role-based access control (RBAC) and secure PostgreSQL schemas, containerized via Docker for cloud-native deployment. Collaborated cross-functionally to translate business requirements into scalable engineering solutions.
-              </p>
-              <div class="role-tags">
-                <span class="badge">Python SME</span>
-                <span class="badge">PostgreSQL</span>
-                <span class="badge">Docker</span>
-                <span class="badge">RBAC</span>
-                <span class="badge">Cloud CherryTree</span>
-                <span class="badge">Cybersecurity</span>
-              </div>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div>
+              <h3>Cloud-Native DevOps</h3>
+              <p>Docker, Kubernetes, GitHub Actions CI/CD, Terraform, Prometheus/Grafana observability.</p>
             </div>
           </div>
-
-          <!-- Education Item: ICFAI University Jaipur -->
-          <div class="timeline-row">
-            <div class="timeline-meta">
-              <span class="timeline-period">2022 — 2026</span>
-              <span class="timeline-company">The ICFAI University Jaipur</span>
-              <span class="timeline-location">Jaipur, Rajasthan, India</span>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div>
+              <h3>Multi-Tenant Architecture</h3>
+              <p>Isolated database schemas, custom domain routing, RBAC, event-driven plugin engines.</p>
             </div>
-            <div class="timeline-dot-wrapper">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-content tilt-card">
-              <h3 class="role-title">Bachelor of Technology (B.Tech) in Computer Science &amp; Technology</h3>
-              <p class="role-desc">
-                Comprehensive degree in core Computer Science fundamentals: Distributed Systems, Operating Systems, Data Structures &amp; Algorithms, Object-Oriented Software Design, Cloud Architecture, and Machine Learning. Active builder shipping real-world production platforms throughout academic tenure.
-              </p>
-              <div class="role-tags">
-                <span class="badge">B.Tech CS</span>
-                <span class="badge">Algorithms</span>
-                <span class="badge">System Design</span>
-                <span class="badge">Cloud Computing</span>
-                <span class="badge">Graduating 2026</span>
-              </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div>
+              <h3>AI &amp; RAG Pipelines</h3>
+              <p>LangChain, vector embeddings, retrieval-augmented generation, and multi-agent systems.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 06: VERIFIED CERTIFICATIONS -->
-    <section id="certifications" class="section-padding content-section bg-obsidian-subtle">
-      <div class="section-container">
-        <div class="section-header text-center">
-          <div class="section-number">CREDENTIALS</div>
-          <h2 class="section-title">Verified <span class="gold-gradient-text italic-serif">Industry Certifications</span></h2>
-          <p class="section-subtitle" style="margin: 0.8rem auto 0;">
-            Specialized credentials validating expertise across Cloud Infrastructure, Generative AI, Machine Learning, and Real-Time Data Streaming.
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Multi-Tenant CMS</span>
+              <h3 class="project-title">WebPress</h3>
+            </div>
+            <span class="project-date">Mar – Apr 2026</span>
+          </div>
+          <p class="project-desc">
+            A scalable multi-tenant Content Management System and drag-and-drop website builder. Users manage multiple isolated websites from a single dashboard with custom domains, dynamic themes, and a custom event-driven hook/filter plugin engine.
           </p>
-        </div>
-
-        <div class="certifications-grid">
-          <div class="cert-card tilt-card">
-            <div class="cert-badge-row">
-              <span class="cert-icon">☁️</span>
-              <span class="cert-authority">Oracle</span>
-            </div>
-            <h3 class="cert-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
-            <p class="cert-desc">Core competencies in Oracle Cloud AI services, generative models, and scalable cloud architectures.</p>
-            <div class="cert-footer">
-              <span class="cert-year">Certified 2025</span>
-              <span class="cert-verified">✦ Verified</span>
-            </div>
+          <div class="project-highlights">
+            <span>Multi-tenant isolation per site</span>
+            <span>Custom domain routing</span>
+            <span>Hook/filter plugin architecture</span>
+            <span>OAuth 2.0 authentication</span>
           </div>
-
-          <div class="cert-card tilt-card">
-            <div class="cert-badge-row">
-              <span class="cert-icon">✨</span>
-              <span class="cert-authority">GenAI Academy</span>
-            </div>
-            <h3 class="cert-title">Google Cloud GenAI Certified</h3>
-            <p class="cert-desc">Foundation in Google Cloud Vertex AI, LLM prompting, embeddings, and generative applications.</p>
-            <div class="cert-footer">
-              <span class="cert-year">GenAI Foundation</span>
-              <span class="cert-verified">✦ Verified</span>
-            </div>
+          <div class="project-tech">
+            <code>Python-Django</code>
+            <code>PostgreSQL</code>
+            <code>JavaScript</code>
+            <code>Docker</code>
+            <code>OAuth 2.0</code>
           </div>
-
-          <div class="cert-card tilt-card">
-            <div class="cert-badge-row">
-              <span class="cert-icon">🎓</span>
-              <span class="cert-authority">Columbia University</span>
-            </div>
-            <h3 class="cert-title">Machine Learning Certified</h3>
-            <p class="cert-desc">Rigorous statistical machine learning methods, neural architectures, regression, and model evaluation.</p>
-            <div class="cert-footer">
-              <span class="cert-year">Columbia Verified</span>
-              <span class="cert-verified">✦ Verified</span>
-            </div>
-          </div>
-
-          <div class="cert-card tilt-card">
-            <div class="cert-badge-row">
-              <span class="cert-icon">❄️</span>
-              <span class="cert-authority">Snowflake</span>
-            </div>
-            <h3 class="cert-title">Building Intelligent Data Application with Snowflake</h3>
-            <p class="cert-desc">Cloud data warehousing, data lake pipelines, and building scalable modern data-driven applications.</p>
-            <div class="cert-footer">
-              <span class="cert-year">Snowflake Academy</span>
-              <span class="cert-verified">✦ Verified</span>
-            </div>
-          </div>
-
-          <div class="cert-card tilt-card">
-            <div class="cert-badge-row">
-              <span class="cert-icon">⚡</span>
-              <span class="cert-authority">Confluent</span>
-            </div>
-            <h3 class="cert-title">Data Streaming Engineer Foundations</h3>
-            <p class="cert-desc">Apache Kafka fundamentals, event stream processing, topic partitioning, and low-latency architectures.</p>
-            <div class="cert-footer">
-              <span class="cert-year">Confluent Verified</span>
-              <span class="cert-verified">✦ Verified</span>
-            </div>
+          <div class="project-links">
+            <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
           </div>
         </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Developer Workspace</span>
+              <h3 class="project-title">CodeSnippets</h3>
+            </div>
+            <span class="project-date">Nov 2025</span>
+          </div>
+          <p class="project-desc">
+            "Terminal Midnight" — a high-performance developer workspace for securely storing, organizing, and executing code snippets. Features syntax highlighting for 50+ languages, instant search, and real-time cross-device sync via Firebase.
+          </p>
+          <div class="project-highlights">
+            <span>50+ language syntax highlighting</span>
+            <span>Real-time Firebase cloud sync</span>
+            <span>Fluid micro-animations (Framer Motion)</span>
+            <span>Tag-based instant indexing</span>
+          </div>
+          <div class="project-tech">
+            <code>React.js</code>
+            <code>Node.js</code>
+            <code>Tailwind CSS</code>
+            <code>Firebase</code>
+            <code>Framer Motion</code>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Event Platform</span>
+              <h3 class="project-title">Eventark</h3>
+            </div>
+            <span class="project-date">Dec 2025</span>
+          </div>
+          <p class="project-desc">
+            A premium event discovery and ticketing platform with 3-tier role-based access control for Attendees, Organizers, and Managers. Includes automated QR-code ticket generation, Google OAuth on GCP, and dynamic event discovery carousels.
+          </p>
+          <div class="project-highlights">
+            <span>3-role RBAC (Attendee, Organizer, Manager)</span>
+            <span>Automated QR-code ticket engine</span>
+            <span>GCP deployment with Google OAuth</span>
+            <span>PostgreSQL relational schema</span>
+          </div>
+          <div class="project-tech">
+            <code>Python-Flask</code>
+            <code>PostgreSQL</code>
+            <code>GCP</code>
+            <code>Google OAuth</code>
+            <code>HTML/CSS</code>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card featured">
+          <div class="project-header">
+            <div>
+              <span class="project-tag">Cybersecurity Platform · Octopyder Services</span>
+              <h3 class="project-title">Cloud CherryTree</h3>
+            </div>
+            <span class="project-date">Jan – Jun 2026</span>
+          </div>
+          <p class="project-desc">
+            Enterprise-grade cybersecurity platform architected during internship as Python SME. Features complex role-based access control (RBAC), secure PostgreSQL schemas with row-level security, and full Docker containerization for cloud-native deployment.
+          </p>
+          <div class="project-highlights">
+            <span>Served as Python SME — led technical decisions</span>
+            <span>Fine-grained RBAC (Admin, Security, Auditor, DevOps)</span>
+            <span>Docker multi-stage containerization</span>
+            <span>Secure PostgreSQL schema design</span>
+          </div>
+          <div class="project-tech">
+            <code>Python</code>
+            <code>PostgreSQL</code>
+            <code>Docker</code>
+            <code>RBAC</code>
+            <code>REST APIs</code>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 07: CONTACT & CORRESPONDENCE -->
-    <section id="contact" class="section-padding content-section">
-      <div class="section-container">
-        <div class="contact-card-wrapper">
-          <div class="contact-grid">
-            <!-- Left Contact Info -->
-            <div class="contact-info-col">
-              <div class="section-number">07 // INITIATE DIALOGUE</div>
-              <h2 class="contact-heading">
-                Let's Build Something <br><span class="gold-gradient-text italic-serif">Exceptional.</span>
-              </h2>
-              <p class="contact-body">
-                Open to Full-Stack &amp; DevOps Engineering roles, cloud-native deployments, and high-impact software projects. Reach out directly or dispatch a transmission below.
-              </p>
+  <div class="divider"></div>
 
-              <div class="contact-channels">
-                <div class="channel-item">
-                  <span class="channel-label">DIRECT EMAIL:</span>
-                  <div class="channel-copy-row">
-                    <a href="mailto:madhurguptaofficial@gmail.com" class="channel-value">madhurguptaofficial@gmail.com</a>
-                    <button class="copy-small-btn" id="copy-email-btn-2" title="Copy to clipboard">
-                      <span>Copy</span>
-                    </button>
-                  </div>
-                </div>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
 
-                <div class="channel-item">
-                  <span class="channel-label">TELEPHONE / WHATSAPP:</span>
-                  <a href="tel:+918114426702" class="channel-value">+91 8114426702</a>
-                </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Languages</h3>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>SQL</span>
+            <span>HTML / CSS</span>
+          </div>
+        </div>
 
-                <div class="channel-item">
-                  <span class="channel-label">LOCATION &amp; TIMEZONE:</span>
-                  <span class="channel-value">Jaipur, Rajasthan, India · IST (UTC+5:30)</span>
-                </div>
-              </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Backend Frameworks</h3>
+          <div class="skill-tags">
+            <span>Django</span>
+            <span>Flask</span>
+            <span>FastAPI</span>
+            <span>Node.js</span>
+            <span>REST API Design</span>
+          </div>
+        </div>
 
-              <!-- Social Links -->
-              <div class="social-links-row">
-                <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="GitHub">
-                  <span>GitHub</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                  </svg>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn">
-                  <span>LinkedIn</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                  </svg>
-                </a>
-                <a href="mailto:madhurguptaofficial@gmail.com" class="social-pill" aria-label="Direct Email">
-                  <span>Email</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Frontend</h3>
+          <div class="skill-tags">
+            <span>React.js</span>
+            <span>Tailwind CSS</span>
+            <span>Framer Motion</span>
+            <span>Vanilla CSS</span>
+            <span>HTML5 Semantics</span>
+          </div>
+        </div>
 
-            <!-- Right Interactive Form -->
-            <div class="contact-form-col">
-              <form id="contact-form" class="luxury-form" novalidate>
-                <div class="form-group">
-                  <label for="contact-name" class="form-label">YOUR NAME / ORGANIZATION *</label>
-                  <input type="text" id="contact-name" name="name" class="luxury-input" placeholder="e.g. Recruiters / Engineering Manager" required>
-                  <span class="field-error" id="name-error"></span>
-                </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Databases</h3>
+          <div class="skill-tags">
+            <span>PostgreSQL</span>
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>Firebase Firestore</span>
+          </div>
+        </div>
 
-                <div class="form-group">
-                  <label for="contact-email" class="form-label">EMAIL ADDRESS *</label>
-                  <input type="email" id="contact-email" name="email" class="luxury-input" placeholder="hiring@techcompany.com" required>
-                  <span class="field-error" id="email-error"></span>
-                </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Cloud &amp; DevOps</h3>
+          <div class="skill-tags">
+            <span>Docker</span>
+            <span>Kubernetes</span>
+            <span>GCP</span>
+            <span>AWS</span>
+            <span>Terraform</span>
+            <span>GitHub Actions</span>
+            <span>Prometheus / Grafana</span>
+          </div>
+        </div>
 
-                <div class="form-group">
-                  <label for="contact-scope" class="form-label">NATURE OF INQUIRY</label>
-                  <select id="contact-scope" name="scope" class="luxury-input luxury-select">
-                    <option value="fullstack-role">Full-Stack / DevOps Engineering Role</option>
-                    <option value="python-backend">Python SME / Backend Role</option>
-                    <option value="project-inquiry">Cloud &amp; Multi-Tenant Project</option>
-                    <option value="general">General Collaboration / Coffee Chat</option>
-                  </select>
-                </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">AI / ML &amp; Security</h3>
+          <div class="skill-tags">
+            <span>LangChain</span>
+            <span>RAG Pipelines</span>
+            <span>Multi-Agent Systems</span>
+            <span>OAuth 2.0</span>
+            <span>JWT</span>
+            <span>RBAC</span>
+            <span>Git / GitLab</span>
+          </div>
+        </div>
 
-                <div class="form-group">
-                  <label for="contact-message" class="form-label">MESSAGE BRIEF *</label>
-                  <textarea id="contact-message" name="message" rows="4" class="luxury-input luxury-textarea" placeholder="Hello Madhur, we would love to connect with you regarding an opportunity at..." required></textarea>
-                  <span class="field-error" id="message-error"></span>
-                </div>
+      </div>
+    </div>
+  </section>
 
-                <button type="submit" class="btn btn-luxury-primary w-full form-submit-btn" id="submit-btn">
-                  <span class="btn-text">Transmit Transmission</span>
-                  <svg class="btn-spinner hidden" id="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
-                  </svg>
-                </button>
+  <div class="divider"></div>
 
-                <p class="form-privacy-note">
-                  🔒 Direct correspondence delivered to Madhur Gupta's inbox. Responses typically within 24 hours.
-                </p>
-              </form>
+  <!-- EXPERIENCE & EDUCATION -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Experience &amp; Education</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">Jan 2026 — Jun 2026</span>
+            <span class="timeline-org">Octopyder Services Pvt. Ltd.</span>
+            <span class="timeline-loc">Jaipur, Rajasthan · On-Site</span>
+          </div>
+          <div class="timeline-right">
+            <h3>Full Stack Developer Intern <span class="role-badge">Python SME</span></h3>
+            <ul>
+              <li>Served as the team's Python Subject Matter Expert, guiding technical decisions and running knowledge-sharing sessions.</li>
+              <li>Architected Cloud CherryTree — a cybersecurity platform with complex RBAC permission matrices and secure PostgreSQL schemas.</li>
+              <li>Containerized all services via Docker for cloud-native deployment.</li>
+              <li>Collaborated cross-functionally to translate business requirements into production-ready engineering solutions.</li>
+            </ul>
+            <div class="timeline-tags">
+              <code>Python SME</code><code>PostgreSQL</code><code>Docker</code><code>RBAC</code><code>Cybersecurity</code>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- LUXURY FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-top-row">
-        <div class="footer-brand">
-          <span class="brand-monogram">MG</span>
-          <p class="footer-tagline">Madhur Gupta — Full Stack &amp; DevOps Engineer</p>
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2022 — 2026</span>
+            <span class="timeline-org">The ICFAI University Jaipur</span>
+            <span class="timeline-loc">Jaipur, Rajasthan</span>
+          </div>
+          <div class="timeline-right">
+            <h3>B.Tech — Computer Science &amp; Technology</h3>
+            <ul>
+              <li>Core curriculum in Distributed Systems, Operating Systems, Data Structures &amp; Algorithms, OOP, Cloud Architecture, and Machine Learning.</li>
+              <li>Actively shipped 5+ real-world production platforms during academic tenure.</li>
+            </ul>
+            <div class="timeline-tags">
+              <code>B.Tech CS</code><code>Algorithms</code><code>System Design</code><code>Cloud Computing</code>
+            </div>
+          </div>
         </div>
-        <div class="footer-nav">
-          <a href="#hero" class="footer-link">Back to Top ↑</a>
-          <a href="#projects" class="footer-link">Projects</a>
-          <a href="#architecture" class="footer-link">Architecture</a>
-          <a href="#certifications" class="footer-link">Certifications</a>
-          <a href="#contact" class="footer-link">Contact</a>
-        </div>
-      </div>
 
-      <div class="footer-bottom-row">
-        <div class="footer-copyright">
-          © <span id="current-year">2026</span> Madhur Gupta. Handcrafted with semantic HTML5 &amp; Vanilla CSS.
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div class="certs-grid">
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-org">Oracle</span>
+            <span class="cert-check">✓</span>
+          </div>
+          <h3>Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
+          <p>Core competencies in Oracle Cloud AI services, generative models, and scalable cloud architectures.</p>
         </div>
-        <div class="footer-telemetry">
-          <span class="telemetry-pill">LOCATION: JAIPUR, INDIA</span>
-          <span class="telemetry-pill">STATUS: OPEN TO ROLES</span>
-          <span class="telemetry-pill">SYSTEM: FULL STACK &amp; DEVOPS</span>
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-org">Google Cloud / GenAI Academy</span>
+            <span class="cert-check">✓</span>
+          </div>
+          <h3>Google Cloud GenAI Certified</h3>
+          <p>Foundation in Google Cloud Vertex AI, LLM prompting, embeddings, and generative application development.</p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-org">Columbia University</span>
+            <span class="cert-check">✓</span>
+          </div>
+          <h3>Machine Learning Certified</h3>
+          <p>Statistical machine learning, neural architectures, regression models, and structured model evaluation.</p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-org">Snowflake</span>
+            <span class="cert-check">✓</span>
+          </div>
+          <h3>Building Intelligent Data Applications with Snowflake</h3>
+          <p>Cloud data warehousing, data lake pipelines, and scalable modern data-driven application design.</p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-org">Confluent</span>
+            <span class="cert-check">✓</span>
+          </div>
+          <h3>Data Streaming Engineer Foundations</h3>
+          <p>Apache Kafka fundamentals, event stream processing, topic partitioning, and low-latency data architectures.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p class="contact-intro">
+            Open to Full-Stack &amp; DevOps Engineering roles, cloud-native projects, and high-impact software opportunities. Feel free to reach out directly or send a message.
+          </p>
+          <div class="contact-detail">
+            <span class="contact-label">Email</span>
+            <a href="mailto:madhurguptaofficial@gmail.com">madhurguptaofficial@gmail.com</a>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-label">Phone / WhatsApp</span>
+            <a href="tel:+918114426702">+91 8114426702</a>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-label">Location</span>
+            <span>Jaipur, Rajasthan, India (IST — UTC+5:30)</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer">github.com/imadhurgupta</a>
+          </div>
+          <div class="contact-social">
+            <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer" class="social-btn">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+            <a href="mailto:madhurguptaofficial@gmail.com" class="social-btn">Email</a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form id="contact-form" novalidate>
+            <div class="field">
+              <label for="f-name">Name / Organization</label>
+              <input type="text" id="f-name" name="name" placeholder="Your name or company" required>
+              <span class="err" id="err-name"></span>
+            </div>
+            <div class="field">
+              <label for="f-email">Email Address</label>
+              <input type="email" id="f-email" name="email" placeholder="your@email.com" required>
+              <span class="err" id="err-email"></span>
+            </div>
+            <div class="field">
+              <label for="f-subject">Subject</label>
+              <select id="f-subject" name="subject">
+                <option value="role">Full-Stack / DevOps Engineering Role</option>
+                <option value="project">Project Collaboration</option>
+                <option value="python">Python SME / Backend Opportunity</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" rows="4" placeholder="Tell me about the opportunity or project..." required></textarea>
+              <span class="err" id="err-message"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-full" id="f-submit">
+              <span id="f-submit-text">Send Message</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>© <span id="footer-year"></span> Madhur Gupta. Full Stack &amp; DevOps Engineer.</span>
+        <div class="footer-links">
+          <a href="https://github.com/imadhurgupta" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:madhurguptaofficial@gmail.com">Email</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- INTERACTIVE PROJECT DETAIL MODAL / LIGHTBOX -->
-  <div id="project-modal" class="luxury-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-    <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-dialog tilt-card">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal dialog">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 6L6 18M6 6l12 12"/>
-        </svg>
-      </button>
-
-      <div class="modal-content-scroll">
-        <div class="modal-header">
-          <div class="modal-tag" id="modal-tag">PROJECT CATEGORY</div>
-          <h2 class="modal-title" id="modal-title">Project Title</h2>
-          <p class="modal-subtitle" id="modal-subtitle">Project Subtitle</p>
-        </div>
-
-        <div class="modal-media-frame">
-          <img id="modal-image" src="" alt="Project Preview" class="modal-image" loading="lazy">
-        </div>
-
-        <div class="modal-details-grid">
-          <div class="modal-col-main">
-            <h3 class="modal-section-h3">Technical Highlights &amp; Architecture</h3>
-            <p id="modal-deepdive-text" class="modal-body-text">
-              Detailed system architecture and scalability accomplishments...
-            </p>
-            
-            <h3 class="modal-section-h3">Key Metrics Achieved</h3>
-            <div class="modal-metrics-row" id="modal-metrics-container">
-              <!-- Dynamically populated -->
-            </div>
-          </div>
-
-          <div class="modal-col-side">
-            <h3 class="modal-section-h3">Technologies Utilized</h3>
-            <div class="modal-tech-stack" id="modal-tech-stack">
-              <!-- Dynamically populated -->
-            </div>
-
-            <div class="modal-actions-side">
-              <a href="#contact" class="btn btn-luxury-primary w-full" id="modal-cta-btn">
-                <span>Inquire About Project</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TOAST NOTIFICATION -->
-  <div id="toast-notification" class="luxury-toast" role="status" aria-live="polite">
-    <span class="toast-icon">✦</span>
-    <span class="toast-message" id="toast-message">Message dispatched successfully.</span>
-  </div>
-
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
